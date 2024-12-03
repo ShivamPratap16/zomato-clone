@@ -1,22 +1,29 @@
-import React from 'react'
+import React from "react";
+import css from "./NotificationSettingsUtil.module.css";
 
-import css from './NotificationSettingsUtil.module.css'
-
-const NotificationSettingsUtil = (props) => {
-  
-  const {txt, tag, push = false, email = false, whatsapp = false, ...restProps} = props;
-
-  return <div className={css.outerDiv}>
-    <div className={css.innerDiv}>
-      <div className={css.left}>
-        <div className={css.ttl}>{txt}</div>
-        <div className={css.tag}>{tag}</div>
+const NotificationSettingsUtil = ({ txt, tag, push, email, whatsapp, onToggle }) => {
+  return (
+    <div className={css.row}>
+      <div className={css.texts}>
+        <div className={css.title}>{txt}</div>
+        <div className={css.description}>{tag}</div>
       </div>
-      <div className={css.right}>
-        <div className={css.switchCheck}>ssw</div>
+      <div className={css.toggles}>
+        <label className={css.switch}>
+          <input type="checkbox" checked={push} onChange={() => onToggle("push")} />
+          <span className={css.slider}></span>
+        </label>
+        <label className={css.switch}>
+          <input type="checkbox" checked={email} onChange={() => onToggle("email")} />
+          <span className={css.slider}></span>
+        </label>
+        <label className={css.switch}>
+          <input type="checkbox" checked={whatsapp} onChange={() => onToggle("whatsapp")} />
+          <span className={css.slider}></span>
+        </label>
       </div>
     </div>
-  </div>
-}
+  );
+};
 
-export default NotificationSettingsUtil
+export default NotificationSettingsUtil;

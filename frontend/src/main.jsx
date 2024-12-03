@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import Store from './Redux/store.js';
 import AddRestaurant from './pages/AddRestaurant/AddRestaurant'
 import ShowCase from './pages/ShowCase/ShowCase'
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage'
@@ -10,13 +10,14 @@ import GetTheApp from './pages/GetTheApp/GetTheApp'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import SkipedPage from './pages/SkipedPage/SkipedPage'
 import UserSettingsPage from './pages/UserSettingsPage/UserSettingsPage'
-
+import { Provider } from "react-redux";
 import TestPage from './pages/TestPage/TestPage'
 // import AddRestaurantHeader from './components/AddRestaurantHeader/AddRestaurantHeader'
 import App from './App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <Provider store={Store}> {/* Wrap everything with Redux Provider */}
   <BrowserRouter>
     <Routes>
       <Route index element={<App />} />
@@ -36,4 +37,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   </BrowserRouter>
+  </Provider>
 )

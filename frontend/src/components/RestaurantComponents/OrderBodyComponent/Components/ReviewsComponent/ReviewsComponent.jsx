@@ -15,8 +15,8 @@ const ReviewsComponent = () => {
   let data = [
       {
         imgSrc: profilepic,
-        title: "Paradise Biryani", // Replaced 'Tomato' with 'Zomato'
-        address: "Kukatpally, Pune", // Original address
+        title: "pratap", // Replaced 'Tomato' with 'Zomato'
+        address: "nan", // Original address
         reviews: 0,
         followers: 0,
         stars: 3,
@@ -29,8 +29,8 @@ const ReviewsComponent = () => {
       },
       {
         imgSrc: profilepic,
-        title: "Paradise Biryani", // Replaced 'Tomato' with 'Zomato'
-        address: "Kharadi, Pune", // Original address
+        title: "pratap", // Replaced 'Tomato' with 'Zomato'
+        address: "nan", // Original address
         reviews: 0,
         followers: 0,
         stars: 3,
